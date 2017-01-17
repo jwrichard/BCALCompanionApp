@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "194500103983",
+    "firebase_url": "https://bcal-c901e.firebaseio.com",
+    "project_id": "bcal-c901e",
+    "storage_bucket": "bcal-c901e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:194500103983:android:6743c23b50ae2350",
+        "android_client_info": {
+          "package_name": "ca.justinrichard.bcal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "194500103983-9hlbtpktcat4vrn567tjh8uf2c0o4g69.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ca.justinrichard.bcal",
+            "certificate_hash": "7A8A2E88BC3ABA214E971012ED718119C44AC674"
+          }
+        },
+        {
+          "client_id": "194500103983-or568h67g35nam0q88svhh10f63v13q0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAia3CGuM07h_H_t3E5LC8vGaVpujhgnJQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "194500103983-or568h67g35nam0q88svhh10f63v13q0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -25,5 +25,6 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
 
     private void saveRegistrationToken(String token){
         // Save value to local storage, and trigger main activity to update its cookie to include it
+
     }
 }

@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="ca.justinrichard.link.MainActivity">
+    <item
+        android:title="Refresh"
+        android:id="@+id/action_refresh"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_action_refresh"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:title="Home"
+        android:id="@+id/action_home"
+        android:orderInCategory="200"
+        android:icon="@drawable/ic_action_home"
+        app:showAsAction="ifRoom"/>
+</menu>

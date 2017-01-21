@@ -14,10 +14,14 @@ tools:context="ca.justinrichard.bcal.MainActivity">
         android:layout_height="match_parent"
         android:padding="0dp"
         tools:context="ca.justinrichard.bcal.MainActivity">
-        <WebView
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipeToRefresh"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/mWebView" />
+            android:layout_height="match_parent">
+            <WebView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/mWebView" />
+        </android.support.v4.widget.SwipeRefreshLayout>
     </RelativeLayout>
-
 </android.support.design.widget.CoordinatorLayout>

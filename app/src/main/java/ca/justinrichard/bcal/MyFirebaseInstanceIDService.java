@@ -1,6 +1,7 @@
 package ca.justinrichard.bcal;
 
 import android.util.Log;
+import android.webkit.CookieManager;
 
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
@@ -25,6 +26,7 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
 
     private void saveRegistrationToken(String token){
         // Save value to local storage, and trigger main activity to update its cookie to include it
-
+        // Set cookie
+        CookieManager.getInstance().setCookie("https://bcal.ca/", "firebaseToken="+token);
     }
 }

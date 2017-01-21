@@ -19,7 +19,6 @@ import com.google.firebase.messaging.RemoteMessage;
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     public final static String TAG = "FBMessagingService";
-    public final static String BCAL_URI = "ca.justinrichard.bcal.MESSAGE";
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
@@ -30,11 +29,10 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         Log.d(TAG, "Notification Message Body: " + remoteMessage.getNotification().getBody());
 
         // Check if message contains a data payload.
-        String message = "";
+        String message = remoteMessage.getNotification().getBody();
         String uri = "";
         if (remoteMessage.getData().size() > 0) {
             Log.d(TAG, "Message data payload: " + remoteMessage.getData());
-            message = remoteMessage.getData().get("message");
             uri = remoteMessage.getData().get("uri");
         }
 
@@ -56,14 +54,14 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         Intent intent;
         intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        intent.putExtra(BCAL_URI, uri);
+        intent.putExtra("url", uri);
 
         // Keep same request code such that notifications overwrite each other
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent, PendingIntent.FLAG_ONE_SHOT);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
 
         Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
-                .setSmallIcon(R.drawable.logo)
+                .setSmallIcon(R.drawable.ic_stat_name)
                 .setColor(getResources().getColor(R.color.colorPrimary))
                 .setContentTitle("BC Amateur League")
                 .setContentText(messageBody)
@@ -72,7 +70,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 .setContentIntent(pendingIntent);
 
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
+        notificationManager.notify(0, notificationBuilder.build());
     }
 
 }
